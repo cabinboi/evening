@@ -206,6 +206,9 @@ class Beatengine {
                     this.audCounter++;  
                     if(this.audCounter>6){this.audCounter=2;}//reset counter, random instrument files played in audios 2-5
                     
+                    if (this.action){   this.currentAction = this.action; }  ////    ::::  these are animations tied to the timing beats  JUST MOVED THIS
+                    
+                    
                     /*
                     if ( gFile.getRandomNum(10) <2) {          //play other instrument
                       this.randAud = gFile.getRandomFile(this.playSound[4], this.playSound[5], this.playSound[2], this.playSound[3] );   
@@ -217,10 +220,10 @@ class Beatengine {
                       if(this.audCounter>6){this.audCounter=2;}//reset counter, random instrument files played in audios 2-5
                     }
                     */
-                    if (this.action){   this.currentAction = this.action; }  ////    ::::  these are animations tied to the timing beats  JUST MOVED THIS
+                    
                     
                   }  
-                //  if (this.action){   this.currentAction = this.action; }  ////    ::::  these are animations tied to the timing beats
+                //  if (this.action){   this.currentAction = this.action; }  ////    ::::  these are animations tied to the timing beats  MOVED ABOVE
                    
                 }                            
               break; 
@@ -243,34 +246,27 @@ class Beatengine {
      ///////////////////    RECONSIDER THIS MIGHT HAVE TO PUT ALL BACK IN FOR SOME OTHER FUNCTION
      
      if (this.action){   if (this.currentAction) {    ////    ::::  these are animation literals tied to the timing beats
- //this.isSameImg = this.currentAction[0] (this.currentAction[1], this.currentAction[2], this.currentAction[3], this.currentAction[4],this.currentAction[5], this); // method literal      
-     
+ //this.isSameImg = this.currentAction[0] (this.currentAction[1], this.currentAction[2], this.currentAction[3], this.currentAction[4],this.currentAction[5], this); // method literal         
      //  if(this.isSameImg){ } else { 
          
-      if (this.playSound){                                //// JUST MOVED FROM OUTSIDE
-        
+      if (this.playSound){                                //// JUST MOVED FROM OUTSIDE        
         
        if (this.currentAud) { 
          //this.currentAud.play();    ////MOVING UP UP
          this.isSameImg = this.currentAction[0] (this.currentAction[1], this.currentAction[2], this.currentAction[3], this.currentAction[4],this.currentAction[5], this); // method literal   
-        // this.currentAud.play();  
-       }         //// PLAY THE SOUND
+       }             
         
-        
-       if (this.currAuxAud) { this.currAuxAud.play();   } 
-        
+       if (this.currAuxAud) { this.currAuxAud.play();   }         
         
      }  
       // }  //this.currAuxAud = 
-     this.isSameImg = 0;
+     this.isSameImg = 0;       
        
-       
-     }     }   
-   
+     }     }      
      
      /*        JUST MOVED INSIDE ^^
      if(this.isSameImg){ } else { if (this.playSound){  
-       if (this.currentAud) { this.currentAud.play();   }         //// PLAY THE SOUND
+       if (this.currentAud) { this.currentAud.play();   }         //// PLAY THE SOUND   MOVED ABOVE TO GET SOUND GOING BEFORE VISION SHOWS  NEGATES SAME IMAGE STOP THO
        if (this.currAuxAud) { this.currAuxAud.play();   } 
      }   }  //this.currAuxAud = 
      this.isSameImg = 0; 

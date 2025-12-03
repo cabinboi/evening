@@ -137,6 +137,8 @@ function initBella(){
   var ranSwapper = new Animator(swapMatrix, 20000, 0, "ranImageAud", [gFolderBase, 8], 0, 0,  [gFolderBase + "AUDIO/Brushs/", 61, ] ); 
    gBeatEngine.animArray.push(ranSwapper); 
   
+  document.getElementById("BELLA_NEW").style.opacity =  1;
+  
   
   /*
   var canalArr =  [ ["smallCanal", "CANAL STARS/", 46] ]  ////CANAL VERSION   
