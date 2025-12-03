@@ -1,1 +1,1 @@
-rough random beat engine for trying some photo animations
+rough js random beat engine for trying some photo animations
