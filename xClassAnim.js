@@ -32,7 +32,9 @@ class Animator {
     if (millsecs) {this.millsecTimer = millsecs;}      
 }     
   
-  anime(){        /////////   -- CHANGED in SHADS  ----ADD A CATCH FOR INFINITY, ONES MEANT TO KEEP SPINNING FOREVER
+  anime(){        /////////   
+    if (this.numMoves > 100000) {  }    ////  NEVER STOP, ANIMATE TO INFIN
+    else  {       
     if (this.moveCounter > this.numMoves) {
       // this anim has ended, but is there sequence to follow, or a callback?
       if(this.sequencer){gBeatEngine.animArray.push( this.sequencer );}
@@ -43,7 +45,7 @@ class Animator {
            let strMethod = this.callBack[1]; 
            objToCall[strMethod]();                
        }               }   }          
-      return 1;      }  //end this.moveCounter > this.numMoves
+      return 1;      }  }  //end this.moveCounter > this.numMoves
     
     
     ///////////////////  GET THESE WORKING AS SWITCH
